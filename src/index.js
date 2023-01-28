@@ -11,14 +11,16 @@ const countryInfo = document.querySelector(".country-info");
 console.log(inputEl);
 
 inputEl.addEventListener('input', debounce((findCountry), DEBOUNCE_DELAY));
-
    
    function findCountry(e) {
   
     let name = e.target.value.trim();
-
     console.log(name);
 
+    if(name.length === 0){
+        return
+    }
+    
     fetchCountries(name).then(renderCountryList).catch((error) =>
     {  Notiflix.Notify.failure("Oops, there is no country with that name");
       countryInfo.innerHTML = "";

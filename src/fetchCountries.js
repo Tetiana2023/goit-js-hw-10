@@ -9,9 +9,4 @@
  return response.json()
 
 })
-// .then(country => {
-//     console.log(country)
-//  })
-//  .catch(error => {
-//      console.log(error)})
 }
