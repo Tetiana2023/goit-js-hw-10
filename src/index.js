@@ -17,8 +17,10 @@ inputEl.addEventListener('input', debounce((findCountry), DEBOUNCE_DELAY));
     let name = e.target.value.trim();
     console.log(name);
 
-    if(name.length === 0){
-        return
+    if(!name){
+      countryInfo.innerHTML = "";
+       countryList.innerHTML = "";
+        return;
     }
     
     fetchCountries(name).then(renderCountryList).catch((error) =>
